@@ -1,5 +1,5 @@
 {% set name = "biobear" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/biobear-{{ version }}.tar.gz
-  sha256: 5dd0856120e3960ee4755ce798b48368af7674b0539b07ce72c31a0154d43a89
+  sha256: 8772f0ee88bdea2a6aaef787bb284d1ecc06bb4d9346fbbad7f2c145fce28f4e
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
