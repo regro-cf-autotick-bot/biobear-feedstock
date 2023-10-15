@@ -1,5 +1,5 @@
 {% set name = "biobear" %}
-{% set version = "0.13.5" %}
+{% set version = "0.13.7" %}
 
 package:
   name: {{ name|lower }}
@@ -15,17 +15,17 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
+    - python >=3.9,<4                        # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - maturin >=1.1.0,<2.0.0                 # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.9,<4
     - maturin >=1.1.0,<2.0.0
     - pip
     - xz
   run:
-    - python >=3.9,<4.0
+    - python
     - pyarrow >=12
 test:
   imports:
