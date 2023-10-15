@@ -26,7 +26,7 @@ requirements:
     - pip
     - xz
   run:
-    - python >=3.9,<4.0
+    - python
     - pyarrow >=12
 test:
   imports:
