@@ -25,8 +25,8 @@ requirements:
     - pip
     - xz
   run:
-    - python
-    - pyarrow >=12,<13
+    - python >=3.9,<4.0
+    - pyarrow >=12
 test:
   imports:
     - biobear
