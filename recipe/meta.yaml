@@ -12,20 +12,21 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  skip: true  # [py<39]
 
 requirements:
   build:
-    - python >=3.9,<4                        # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - maturin >=1.1.0,<2.0.0                 # [build_platform != target_platform]
   host:
-    - python >=3.9,<4
+    - python
     - maturin >=1.1.0,<2.0.0
     - pip
     - xz
   run:
-    - python
+    - python >=3.9,<4.0
     - pyarrow >=12
 test:
   imports:
